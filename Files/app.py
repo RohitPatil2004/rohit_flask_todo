@@ -40,5 +40,18 @@ def submit():
     except PyMongoError as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 500
 
+@app.route('/submittodoitem', methods=['POST'])
+def submit_todo():
+    data = request.get_json()
+    if not data or 'name' not in data or 'des' not in data:
+        return jsonify({"error": "Invalid data"}), 400
+    name = data['name']
+    des = data['des']
+    try:
+        collection.insert_one({"item_name": name, "item_des": des})
+        return jsonify({"message": "Data submitted successfully"}), 200
+    except PyMongoError as e:
+        return jsonify({"error": f"An error occurred: {str(e)}"}), 500
+
 if __name__ == '__main__':
     app.run(port=5001, debug=True)

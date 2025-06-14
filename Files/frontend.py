@@ -4,7 +4,7 @@ app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def form():
-    return render_template('form.html')
+    return render_template('to_do_form.html')
 
 @app.route('/success')
 def success():

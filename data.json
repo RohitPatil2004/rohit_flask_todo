@@ -1,6 +1,10 @@
 [
     {"name": "Rohit", "email": "rohitvpatil04@gmail.com"},
     {"name": "Om", "email": "omvpatil02@gmail.com"},
-  {"name": "Vijay", "email": "vijaypatil44@gmail.com"}
+  {"name": "Vijay", "email": "vijaypatil44@gmail.com"},
+  
+  {"name":"Akshay", "email":"akshay@gmail.com"},
+  {"name":"Krushna","email":"krushna@gmail.com"}
+
   ]
   

@@ -10,7 +10,8 @@
     Item Name: <input type="text" id="item_name" name="item_name" required><br><br>
     Item Description: <input type="text" id="item_des" name="item_des" required><br><br>
     Item Id: <input type="text" id="item_id" name="item_id" required><br><br>
-
+    Item UUID: <input type="text" id="item_uid" name="item_uid" required><br><br>
+    Item Hash: <input type="text" id="item_hash" name="item_hash" required><br><br>
     <input type="submit" value="Submit">
     <a href="http://localhost:5001/api"><button type="button">View Data</button></a>
   </form>
@@ -28,6 +29,8 @@
       const name = document.getElementById('item_name').value;
       const des = document.getElementById('item_des').value;
       const id = document.getElementById('item_id').value;
+      const uid = document.getElementById('item_uid').value;
+      const hash = document.getElementById('item_hash').value;
 
       try {
         const response = await fetch('http://localhost:5001/submit', {
@@ -35,7 +38,7 @@
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({ name, des, id})
+          body: JSON.stringify({ name, des, id, uid, hash })
         });
 
         const result = await response.json();
